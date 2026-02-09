@@ -49,9 +49,12 @@ public class Student {
     }
 
     @Column(name="student_percentage")
-    private float percentage;
+    private Float percentage;
 
-   public Student(String name, String program, float percentage) {
+    public Student() {
+    }
+
+   public Student(String name, String program, Float percentage) {
        super();
        this.name = name;
         this.program = program;
