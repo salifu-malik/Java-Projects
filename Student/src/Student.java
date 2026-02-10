@@ -77,7 +77,7 @@ public void  computeGradePointAverage(){
 public void dispalyInfo(){
     System.out.println("Your student ID is "+ getId());
     System.out.println("Your number of hours is "+ getNCreditHours());
-    System.out.println("Your number of pints earned is "+ getNPointsEarned());
+    System.out.println("Your number of points earned is "+ getNPointsEarned());
     System.out.println("Your grade point average is "+ gradePointAverage);
 
 }

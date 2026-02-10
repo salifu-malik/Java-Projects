@@ -4,8 +4,8 @@ package com.mankind.firstWebProject;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="users")
-public class Users {
+@Table(name="user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
@@ -15,9 +15,9 @@ public class Users {
 
 
 
-    public Users() {}
+    public User() {}
 
-    public Users(int userId, String username, String email, String password) {
+    public User(int userId, String username, String email, String password) {
         super();
         this.userId = userId;
         this.username = username;

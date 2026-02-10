@@ -7,25 +7,17 @@
   RandomGuessMatch.java.
  */
 
-import java.util.Scanner;
-public class RandomGuessMatch {
-    public static void main(String[] args) {
-        int random, userEntry;
-        boolean results;
+void main() {
+    int random, userEntry;
+    boolean results;
 
-        Scanner inputDevice = new Scanner(System.in);
-        System.out.println("Enter any any number between 1 and 5 inclusive:");
-        userEntry = inputDevice.nextInt();
+    Scanner inputDevice = new Scanner(System.in);
+    IO.println("Enter any any number between 1 and 5 inclusive:");
+    userEntry = inputDevice.nextInt();
 
-        random = 1 + (int)(Math.random() * 5);
-        results = random == userEntry;
+    random = 1 + (int) (Math.random() * 5);
+    results = random == userEntry;
 
-        System.out.println(" You entered "+ userEntry + " and  its "+ results + " because the random number chosen is "+random );
-
-    }
-
-
-
-
+    IO.println(" You entered " + userEntry + " and  its " + results + " because the random number chosen is " + random);
 
 }
