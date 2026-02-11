@@ -1,5 +1,6 @@
 package com.mankind.firstWebProject;
 
+import com.mankind.firstWebProject.controllers.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {

@@ -1,15 +1,16 @@
 package com.mankind.firstWebProject.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
 public class OrderController {
 
-    @GetMapping("/order")
-    public String order(@RequestParam String Item) {
-        return "Your order for "+ Item + " has been received";
+    @RequestMapping("/order")
+    public String order(Model model) {
+        model.addAttribute("food", "Fufu" );
+        return "order";
 
     }
 }

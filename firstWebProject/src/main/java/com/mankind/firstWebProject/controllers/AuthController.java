@@ -2,7 +2,6 @@ package com.mankind.firstWebProject.controllers;
 
 import org.springframework.ui.Model;
 
-import com.mankind.firstWebProject.User;
 import com.mankind.firstWebProject.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +31,8 @@ public class AuthController {
 
     //Show Login Page
     @GetMapping("/login")
-    public String loginPage(Model model) {
+    public String loginPage() {
+
         return "login";
     }
 

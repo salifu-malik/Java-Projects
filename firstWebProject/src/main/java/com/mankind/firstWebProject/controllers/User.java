@@ -1,4 +1,4 @@
-package com.mankind.firstWebProject;
+package com.mankind.firstWebProject.controllers;
 
 
 import jakarta.persistence.*;
