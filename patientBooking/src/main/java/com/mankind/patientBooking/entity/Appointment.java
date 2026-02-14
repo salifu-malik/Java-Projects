@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@Table(name="appointment")
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,12 +16,12 @@ public class Appointment {
     private LocalDate appointmentDate;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private AppointmentStatus status;
-
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
-    private User patient;
+    private Patient patient;
 
     @ManyToOne
     @JoinColumn(name = "doctor_id")

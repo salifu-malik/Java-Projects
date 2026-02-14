@@ -5,11 +5,13 @@ import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private  Long id;
+    private Long id;
+
     private String firstName;
     private String lastName;
     private String gender;
@@ -20,6 +22,6 @@ public class User {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private String role;
+    private Role role;
 
 }

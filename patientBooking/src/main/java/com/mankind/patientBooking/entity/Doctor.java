@@ -3,20 +3,23 @@ package com.mankind.patientBooking.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Entity
 @Data
+@Table(name = "doctors")
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
     private String specialization;
     private String availableDays;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private String lincenceNo;
+    private LocalDate lincenceIssueDate;
+    private LocalDate lincenceExpiryDate;
     private int yearsOfExperience;
 
 
