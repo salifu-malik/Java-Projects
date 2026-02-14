@@ -3,6 +3,8 @@ package com.mankind.patientBooking.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name = "users")
@@ -15,6 +17,10 @@ public class User {
     private String firstName;
     private String lastName;
     private String gender;
+    private String region;
+    private String city;
+    private String address;
+     private Date dob;
 
     @Column(unique = true)
     private String email;

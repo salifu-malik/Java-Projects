@@ -16,7 +16,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate dob;
+
     private LocalDate bookDate;
 
     @NotNull
