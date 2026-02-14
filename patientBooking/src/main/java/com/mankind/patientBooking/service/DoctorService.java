@@ -1,6 +1,7 @@
 package com.mankind.patientBooking.service;
 
 import com.mankind.patientBooking.entity.Doctor;
+import com.mankind.patientBooking.exception.ResourceNotFoundException;
 import com.mankind.patientBooking.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
 

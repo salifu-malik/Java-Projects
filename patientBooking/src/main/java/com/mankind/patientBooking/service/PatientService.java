@@ -2,9 +2,9 @@ package com.mankind.patientBooking.service;
 
 
 import com.mankind.patientBooking.entity.Patient;
+import com.mankind.patientBooking.exception.ResourceNotFoundException;
 import com.mankind.patientBooking.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class PatientService {
 
     public Patient getPatientById(Long id) {
         return patientRepository.findById(id)
-                .orElseThrow(()-> new  ResourceNotFoundException("No patient record found with the id" + id));
+                .orElseThrow(()-> new ResourceNotFoundException("No patient record found with the id" + id));
 
     }
 

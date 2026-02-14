@@ -5,6 +5,7 @@ import com.mankind.patientBooking.entity.Appointment;
 import com.mankind.patientBooking.entity.AppointmentStatus;
 import com.mankind.patientBooking.entity.Doctor;
 import com.mankind.patientBooking.entity.Patient;
+import com.mankind.patientBooking.exception.ResourceNotFoundException;
 import com.mankind.patientBooking.repository.AppointmentRepository;
 import com.mankind.patientBooking.repository.DoctorRepository;
 import com.mankind.patientBooking.repository.PatientRepository;

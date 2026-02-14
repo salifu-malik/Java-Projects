@@ -6,6 +6,7 @@ import com.mankind.patientBooking.dto.RegisterRequest;
 import com.mankind.patientBooking.entity.Patient;
 import com.mankind.patientBooking.entity.Role;
 import com.mankind.patientBooking.entity.User;
+import com.mankind.patientBooking.exception.BadRequestException;
 import com.mankind.patientBooking.repository.PatientRepository;
 import com.mankind.patientBooking.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -37,7 +38,7 @@ public class AuthService {
     //Register method
     public AuthResponse register(RegisterRequest request) {
         if(UserRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email Already Exists");
+            throw new BadRequestException("Email Already Exists");
         }
 
         User user = new User();

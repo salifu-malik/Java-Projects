@@ -1,6 +1,8 @@
 package com.mankind.patientBooking.controller;
 
 
+import com.mankind.patientBooking.dto.AuthResponse;
+import com.mankind.patientBooking.dto.LoginRequest;
 import com.mankind.patientBooking.entity.Doctor;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
