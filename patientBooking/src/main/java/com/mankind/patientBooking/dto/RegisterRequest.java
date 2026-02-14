@@ -21,7 +21,7 @@ public class RegisterRequest {
     private String gender;
 
     @NotBlank
-    private LocalDate birthDate;
+    private LocalDate dob;
 
     @NotBlank
     private String address;

@@ -1,6 +1,7 @@
 package com.mankind.patientBooking.controller;
 
 import com.mankind.patientBooking.entity.Patient;
+import com.mankind.patientBooking.service.PatientService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class PatientController {
 
     @Autowired
-    private  PatientService patientService;
+    private PatientService patientService;
 
     //Crete new patient
     @PostMapping
@@ -23,7 +24,7 @@ public class PatientController {
     //Get all patients
     @GetMapping
     public ResponseEntity<Patient> getAllPatients() {
-        return ResponseEntity.ok(patientService.getAllPatients());
+        return ResponseEntity.ok((Patient) patientService.getAllPatients());
 
     }
 
@@ -37,14 +38,14 @@ public class PatientController {
     //Update patient info
     @PutMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable  Long id, @Valid  @RequestBody Patient patient) {
-        Patient updated = patientService.updatePatientById(id);
-        return ResponseEntity.ok(patient);
+        Patient updated = patientService.updatePatientById(id, patient);
+        return ResponseEntity.ok(updated);
     }
 
     //Delete patient
     @DeleteMapping("/{id}")
     public ResponseEntity<Patient> deletePatient(@PathVariable  Long id) {
-        patientService.deletePatient(id);
+        patientService.deletePatientById(id);
         return ResponseEntity.noContent().build();
     }
 

@@ -20,7 +20,7 @@ public class User {
     private String region;
     private String city;
     private String address;
-     private Date dob;
+    private Date dob;
 
     @Column(unique = true)
     private String email;

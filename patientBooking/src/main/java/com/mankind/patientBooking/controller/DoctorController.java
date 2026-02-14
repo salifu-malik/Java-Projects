@@ -1,6 +1,7 @@
 package com.mankind.patientBooking.controller;
 
 import com.mankind.patientBooking.entity.Doctor;
+import com.mankind.patientBooking.service.DoctorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import java.util.List;
 public class DoctorController {
 
     @Autowired
-    public DoctorService doctorService;
+    private DoctorService doctorService;
 
     //Create a doctor
     @PostMapping
@@ -25,8 +26,8 @@ public class DoctorController {
 
     //Get all doctors
     @GetMapping
-    public ResponseEntity<List<Doctor>> getAllDoctors() {
-        return ResponseEntity.ok(doctorService.getallDoctors());
+    public ResponseEntity<Doctor> getAllDoctors() {
+        return ResponseEntity.ok((Doctor) doctorService.getAllDoctors());
     }
 
     //Get a doctor by ID
@@ -38,7 +39,7 @@ public class DoctorController {
 
     //Update doctor Records
     @PutMapping("/{id}")
-    public ResponseEntity<Doctor> updateDoctor(@PathVariable Long id, @Valid @RequestParam String doctor) {
+    public ResponseEntity<Doctor> updateDoctor(@PathVariable Long id, @Valid @RequestBody Doctor doctor) {
         Doctor updatedDoctor = doctorService.updateDoctor(id, doctor);
         return ResponseEntity.ok().body(updatedDoctor);
     }
@@ -46,8 +47,9 @@ public class DoctorController {
     //Delete a doctor
     @DeleteMapping("/{id}")
     public ResponseEntity<Doctor> deleteDoctor(@PathVariable Long id) {
-        doctorService.deleteDoctor(id);
-        return ResponseEntity.noContent().build();
+        doctorService.deleteDoctorById(id);
+        return ResponseEntity.noContent()
+                .build();
     }
 
 }

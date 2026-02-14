@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -14,6 +15,8 @@ public class Appointment {
     private Long id;
 
     private LocalDate appointmentDate;
+
+    private LocalTime appointmentTime;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
