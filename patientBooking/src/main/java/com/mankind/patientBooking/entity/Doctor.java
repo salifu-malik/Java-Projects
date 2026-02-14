@@ -23,7 +23,7 @@ public class Doctor {
     private int yearsOfExperience;
 
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 

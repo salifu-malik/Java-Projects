@@ -22,7 +22,8 @@ public class Patient {
     @NotNull
     private LocalTime bookTime;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+
     private User user;
 }
