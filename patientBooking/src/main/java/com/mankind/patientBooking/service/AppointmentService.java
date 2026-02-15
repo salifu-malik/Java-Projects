@@ -9,6 +9,7 @@ import com.mankind.patientBooking.exception.ResourceNotFoundException;
 import com.mankind.patientBooking.repository.AppointmentRepository;
 import com.mankind.patientBooking.repository.DoctorRepository;
 import com.mankind.patientBooking.repository.PatientRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,6 @@ public class AppointmentService {
                appointment.setAppointmentDate(request.getAppointmentDate());
                appointment.setStatus(AppointmentStatus.PENDING);
                appointment.setAppointmentTime(request.getAppointmentTime());
-               appointmentRepository.save(appointment);
 
                return appointmentRepository.save(appointment);
 
@@ -72,5 +72,7 @@ public class AppointmentService {
     }
 
 
-
+    public Appointment saveAppointment(Appointment appointment) {
+        return appointmentRepository.save(appointment);
+    }
 }

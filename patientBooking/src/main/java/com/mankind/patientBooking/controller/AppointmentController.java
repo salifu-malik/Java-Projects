@@ -2,6 +2,8 @@ package com.mankind.patientBooking.controller;
 
 import com.mankind.patientBooking.entity.Appointment;
 import com.mankind.patientBooking.entity.Patient;
+import com.mankind.patientBooking.service.AppointmentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +19,9 @@ public class AppointmentController {
 
     //Book a new appointment
     @PostMapping
-    public ResponseEntity<Appointment> bookAppointment(@Valid @RequestBody Appointment request) {
-        Appointment appointment = AppointmentService.bookAppointment(request);
-        return ResponseEntity.ok(appointment);
+    public ResponseEntity<Appointment> createAppointment(@Valid  @RequestBody Appointment appointment) {
+        Appointment savedAppointment = appointmentService.saveAppointment(appointment);
+        return ResponseEntity.ok(savedAppointment);
 
     }
 

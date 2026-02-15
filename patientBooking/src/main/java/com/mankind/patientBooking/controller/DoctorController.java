@@ -19,8 +19,8 @@ public class DoctorController {
     //Create a doctor
     @PostMapping
     public ResponseEntity<Doctor> createDoctor(@Valid @RequestBody Doctor doctor) {
-        Doctor saveDoctor = doctorService.createDoctor(doctor);
-        return ResponseEntity.ok().body(saveDoctor);
+        Doctor savedDoctor = doctorService.createDoctor(doctor);
+        return ResponseEntity.ok().body(savedDoctor);
 
     }
 

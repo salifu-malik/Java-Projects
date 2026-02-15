@@ -3,7 +3,9 @@ package com.mankind.patientBooking.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+
 
 @Entity
 @Data
@@ -20,12 +22,18 @@ public class User {
     private String region;
     private String city;
     private String address;
-    private Date dob;
+    private LocalDate dob;
 
     @Column(unique = true)
     private String email;
 
     private String password;
+
+    private boolean accountNonLocked = true;
+
+    private int failedAttempts = 0;
+
+    private Timestamp lockTime;
 
     @Enumerated(EnumType.STRING)
     private Role role;
